@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS wishlists;
 DROP TABLE IF EXISTS visits;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS destinations;
@@ -32,4 +33,10 @@ CREATE TABLE visits(
     comment VARCHAR(255)
 
 );
+
+CREATE TABLE wishlists(
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    destination_id INT REFERENCES destinations(id) ON DELETE CASCADE
+)
 
