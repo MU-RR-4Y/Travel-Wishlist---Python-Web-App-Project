@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.visit import Visit
+from models.country import Country
 import repositories.destination_respository as destination_repo
 import repositories.user_repository as user_repo
 import repositories.country_repository as country_repo
@@ -36,5 +37,6 @@ def select_all():
 #         destination =destination_repo.select(int(result['destination_id']))
 #         visit = Visit(user, destination, result['date'], result['rating'], result['comment'], id )      
 #     return visit
+
 
 

@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.user import User
+from models.country import Country
 import repositories.destination_respository as destination_repo
 
 
@@ -35,3 +36,25 @@ def select(id):
 def delete_all():
     sql ='DELETE FROM users'
     run_sql(sql)
+
+
+
+def destinations(user):
+    countries =[]
+    destinations = []
+    sql = ''' SELECT countries.* FROM countries
+        INNER JOIN visits
+        ON visits.country_id = countries.id   
+        WHERE visits.user_id = %s'''    
+    values =[user.id]
+    results = run_sql(sql,values)
+    for result in results:
+        country = Country(result['name'],result['id'])
+        countries.append(country)
+       
+    destinations_list = destination_repo.select_all()
+    for destination in destinations_list:
+            for country in countries:
+                if destination.country.id == country.id:
+                    destinations.append(destination)
+    return destinations

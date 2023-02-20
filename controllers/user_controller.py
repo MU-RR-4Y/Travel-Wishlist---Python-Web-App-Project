@@ -16,7 +16,14 @@ def users():
 # NEW ('/new') GET
 
 # CREATE ('/') POST
+
 # SHOW ('/id') GET
+@users_blueprint.route('/users/<id>')
+def users_show(id):
+    user = user_repo.select(id)
+    countries = user_repo.destinations(user)
+    return render_template('users/show.html', user = user, countries = countries)
+
 # EDIT ('/id/edit') GET
 # UPDATE ('/id') POST
 # DELETE ('/id/delete') POST

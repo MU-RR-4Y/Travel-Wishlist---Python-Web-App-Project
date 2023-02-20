@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Name : {{user.name}}</p>
+    <p>Visited:</p>
+    {% for country in countries  %}
+        <p>{{country.name}}</p>
+    {% endfor %}
+
+    <p>{{user.name}}'s Wishlist:</p>
+    
+{% endblock content %}
