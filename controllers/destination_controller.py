@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 from models.country import Country
+from models.destination import Destination
 import repositories.country_repository as country_repo
 import repositories.destination_respository as destination_repo
 
@@ -23,16 +24,14 @@ def add_destintion_to_country(id):
 
 
 # # CREATE ('/') POST
-# @destinations_blueprint.route('/destinations/create/country', method =['POST'])
-# def_add_destination()
-
-
-# def create_destination_country_page():
-
-
-
-
-#     return render_template
+@destinations_blueprint.route('/destinations/create/<id>', methods =['POST'])
+def create_destination_country_page(id):
+    name = request.form['name']
+    information =request.form['info']
+    country = country_repo.select(int(id))
+    destination = Destination(name,country,information)
+    destination_repo.save(destination)
+    return redirect('/countries')
 
 # SHOW ('/id') GET
 # EDIT ('/id/edit') GET
