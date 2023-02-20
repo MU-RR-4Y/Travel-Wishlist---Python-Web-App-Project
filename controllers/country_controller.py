@@ -9,9 +9,8 @@ countries_blueprint = Blueprint('countries', __name__)
 # INDEX ('/') GET
 @countries_blueprint.route('/countries')
 def countries():
-    destinations = destination_repo.select_all()
     countries = country_repo.select_all()
-    return render_template('countries/index.html', countries = countries, destinations =destinations)
+    return render_template('countries/index.html', countries = countries)
 
 
 # NEW ('/new') GET

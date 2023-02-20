@@ -33,6 +33,7 @@ country_repo.save(country_3)
 
 
 
+
 # # TEST Destination
 
 destination_1 = Destination('Rome',country_1,'Home of the Romans')
@@ -83,10 +84,10 @@ user_repo.save(user_6)
 
 # # TEST VISITS
 
-visit_1 = Visit(user_1,country_2,'15/01/2023', 5,'We visited Notre Dame')
-visit_2 = Visit(user_3,country_1,'05/02/2023', 4,'The Vatican was huge')
-visit_3 = Visit(user_1,country_1,'23/01/2023',5,'Florence was amazing')
-visit_4 = Visit(user_4,country_3,'09/02/2023',3,'The magic kingdom was great')
+visit_1 = Visit(user_1,destination_3,'15/01/2023', 5,'We visited Notre Dame')
+visit_2 = Visit(user_3,destination_1,'05/02/2023', 4,'The Vatican was huge')
+visit_3 = Visit(user_1,destination_2,'23/01/2023',5,'Florence was amazing')
+visit_4 = Visit(user_4,destination_4,'09/02/2023',3,'The magic kingdom was great')
 
 visit_repo.save(visit_1)
 visit_repo.save(visit_2)

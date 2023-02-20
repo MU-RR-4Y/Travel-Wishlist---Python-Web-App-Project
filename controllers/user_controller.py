@@ -4,6 +4,7 @@ from models.user import User
 import repositories.user_repository as user_repo
 import repositories.country_repository as country_repo
 import repositories.destination_respository as destination_repo
+import repositories.visit_repository as visit_repo
 
 users_blueprint = Blueprint('users', __name__)
 
@@ -21,8 +22,8 @@ def users():
 @users_blueprint.route('/users/<id>')
 def users_show(id):
     user = user_repo.select(id)
-    countries = user_repo.destinations(user)
-    return render_template('users/show.html', user = user, countries = countries)
+    destinations = user_repo.destinations(user)
+    return render_template('users/show.html', user = user, destinations = destinations)
 
 # EDIT ('/id/edit') GET
 # UPDATE ('/id') POST

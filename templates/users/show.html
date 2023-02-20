@@ -3,10 +3,14 @@
 {% block content %}
     <p>Name : {{user.name}}</p>
     <p>Visited:</p>
-    {% for country in countries  %}
-        <p>{{country.name}}</p>
+    {% for destination in destinations  %}
+        {% if visit.destination.id == destination.id %}
+        <p>{{destination.name}}</p>
+        {% endif %}
+        
     {% endfor %}
 
     <p>{{user.name}}'s Wishlist:</p>
+    
     
 {% endblock content %}

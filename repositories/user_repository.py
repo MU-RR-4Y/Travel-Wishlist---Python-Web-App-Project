@@ -39,25 +39,29 @@ def delete_all():
 
 
 
-def destinations(user):
-    countries =[]
-    destinations = []
-    sql = ''' SELECT countries.* FROM countries
-        INNER JOIN visits
-        ON visits.country_id = countries.id   
-        WHERE visits.user_id = %s'''    
-    values =[user.id]
-    results = run_sql(sql,values)
-    for result in results:
-        country = Country(result['name'],result['id'])
-        countries.append(country)
+# def destinations(user):
+#     countries =[]
+#     destinations = []
+#     sql = ''' SELECT countries.* FROM countries
+#         INNER JOIN visits
+#         ON visits.country_id = countries.id   
+#         WHERE visits.user_id = %s'''    
+#     values =[user.id]
+#     results = run_sql(sql,values)
+#     for result in results:
+#         country = Country(result['name'],result['id'])
+#         countries.append(country)
        
-    destinations_list = destination_repo.select_all()
-    for destination in destinations_list:
-            for country in countries:
-                if destination.country.id == country.id:
-                    destinations.append(destination)
-    return destinations
+#     destinations_list = destination_repo.select_all()
+#     for destination in destinations_list:
+#             for country in countries:
+#                 if destination.country.id == country.id:
+#                     destinations.append(destination)
+
+#     for destination in destinations:
+#         if 
+
+#     return destinations
 
 def visited_on_destinations(country):
     users =[]
@@ -72,3 +76,16 @@ def visited_on_destinations(country):
         users.append(user)
     return users
 
+
+# def wiishlist(user):
+#     destinations =[]
+#     sql =''' SELECT destinations.* FROM destinations
+#         INNER JOIN visits
+#         ON visits.destination_id = destinations.id   
+#         WHERE visits.user_id = %s'''      
+#     values =[user.id]
+#     results = run_sql(sql,values)
+#     for result in results:
+#         destination = destination(result['name'], result['infromation'], result,result['id'])
+#         destinations.append(destination)
+#     return destinations

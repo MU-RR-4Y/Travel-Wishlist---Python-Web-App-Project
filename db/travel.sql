@@ -27,7 +27,7 @@ CREATE TABLE users(
 CREATE TABLE visits(
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id) ON DELETE CASCADE,
-    country_id INT REFERENCES countries(id) ON DELETE CASCADE,
+    destination_id  INT REFERENCES destinations(id) ON DELETE CASCADE,
     date VARCHAR(225),
     rating INT,
     comment VARCHAR(255)
