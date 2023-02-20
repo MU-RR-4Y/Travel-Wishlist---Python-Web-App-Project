@@ -58,3 +58,17 @@ def destinations(user):
                 if destination.country.id == country.id:
                     destinations.append(destination)
     return destinations
+
+def visited_on_destinations(country):
+    users =[]
+    sql = ''' SELECT users.* FROM users
+        INNER JOIN visits
+        ON visits.user_id = users.id   
+        WHERE visits.country_id = %s'''    
+    values =[country.id]
+    results = run_sql(sql,values)
+    for result in results:
+        user = User(result['name'],result['id'])
+        users.append(user)
+    return users
+

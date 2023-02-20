@@ -2,11 +2,27 @@
 
 {% block content %}
 
-<h2>{{destination.name}}</h2> 
+    <h2>{{destination.name}}</h2> 
 
-<p>Country : {{destination.country.name}}</p>
-<p>Information : {{destination.information}}</p>
-<form action="/destination/{{destination.id}}/delete" method="post">
-        <button type="submit">Remove Destination</button>
-</form>
+    <p>Country : {{destination.country.name}}</p>
+    <p>Information : {{destination.information}}</p>
+
+    <p>Visted By:
+        <ul>
+            {% for user in users %}
+                <li><a href="/users/{{user.id}}">{{user.name}}</a></li>
+            {% endfor %}
+
+
+
+        </ul>
+    </p>
+
+
+
+    <form action="/destination/{{destination.id}}/delete" method="post">
+            <button type="submit">Remove Destination</button>
+    </form>
+
+
 {% endblock content %}

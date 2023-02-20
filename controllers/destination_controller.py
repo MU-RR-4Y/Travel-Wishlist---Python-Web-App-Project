@@ -4,6 +4,7 @@ from models.country import Country
 from models.destination import Destination
 import repositories.country_repository as country_repo
 import repositories.destination_respository as destination_repo
+import repositories.user_repository as user_repo
 
 destinations_blueprint = Blueprint('destinations', __name__)
 
@@ -62,7 +63,8 @@ def create_destination_country_page(id):
 @destinations_blueprint.route('/destinations/show/<id>')
 def show_destination(id):
     destination = destination_repo.select(id)
-    return render_template('/destinations/show.html', destination = destination)
+    users = user_repo.visited_on_destinations(destination.country)
+    return render_template('/destinations/show.html', destination = destination, users = users)
 
 
 
