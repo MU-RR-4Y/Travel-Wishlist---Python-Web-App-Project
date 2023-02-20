@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% for destination in destinations %}
+            <li>
+                <p>Name : {{destination.name}}</p>
+                <p>Country : {{destination.country.name}}</p>
+                <p>Information : {{destination.information}}</p>
+
+            </li>
+            
+        {% endfor %}
+
+
+
+
+    </ul>
+  
+{% endblock content %}

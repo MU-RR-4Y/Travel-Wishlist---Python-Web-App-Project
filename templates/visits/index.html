@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+
+    
+    
+    {% for visit in visits %}
+    <li>
+        <p>Visited by : {{visit.user.name}}</p>
+        <p>Destination : {{visit.country.name}}</p>
+        <p>Date : {{visit.date}}</p>
+        <p>Rating : {{visit.rating}}</p>
+        <p>Comment : {{visit.comment}}</p>
+      
+        
+    </li>
+    
+    {% endfor %}  
+</ul>
+
+{% endblock content %}

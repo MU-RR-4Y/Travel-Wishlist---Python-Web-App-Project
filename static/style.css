@@ -1,0 +1,46 @@
+body{
+    display: grid;
+    align-content: space-between;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+
+nav {
+    display : flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+    background-color: #FFB340 ;
+    gap : 1rem;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    }
+
+nav ul li {
+    list-style: none;
+   
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+header {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #FEE81E;
+    height: 7.5rem;
+    padding-bottom: 1rem;
+}
+
+footer{
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #FEE81E;
+    height: 7.5rem;
+}
+
