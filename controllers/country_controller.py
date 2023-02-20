@@ -15,7 +15,9 @@ def countries():
 
 
 # NEW ('/new') GET
-
+@countries_blueprint.route('/countries/new')
+def new_country():
+    return render_template('countries/new.html')
 
 # CREATE ('/') POST
 # SHOW ('/id') GET

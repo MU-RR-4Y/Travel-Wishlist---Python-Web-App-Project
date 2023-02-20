@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<a href="/countries/new">Add a new Country</a>
+
+<form action="/contries/create" method="post">
+    <label for="name"></label>
+    <input type="text" id="name" name="name">
+
+    <button type="submit">Add Country</button>
+
+</form>
+
 <ul>
 {% for country in countries %}
     <li>
@@ -13,7 +24,7 @@
                 {% endif %}     
             </ul>
             {% endfor %}
-        
+              <a href="/destinations/new/{{loop.index0}}">Add a destination</a>
     </li>
 {% endfor %}
 </ul>

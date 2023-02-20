@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<form action="/contries/create" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+    
+    <button type="submit">Add Country</button>
+    
+</form>
+<br>
+<br>
+
+<!-- FORM to add destinations -->
+
+<form action="/destinations/create/country" method="post">
+    <div class=" destination-form">
+
+        <label for="name">Destination Name</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="info">Information</label>
+        <textarea name="info" id="info" cols="30" rows="5"></textarea>
+        
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country">
+
+        <button type="submit">Add destination</button>
+    </div>
+</form>
+
+
+{% endblock content %}

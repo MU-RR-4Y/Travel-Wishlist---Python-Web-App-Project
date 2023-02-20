@@ -12,10 +12,25 @@ def destinations():
     destinations = destination_repo.select_all()
     countries = country_repo.select_all() 
 
-    return render_template('destinations/index.html', destinations = destinations, countries = countries )
+    return render_template('/destinations/index.html', destinations = destinations, countries = countries )
 
 # NEW ('/new') GET
+@destinations_blueprint.route('/destinations/new/<id>')
+def add_destintion_to_country(id):
+    country = country_repo.select((int(id)+1))
+    return render_template('/destinations/new2.html', country = country)
+    
+
+
 # CREATE ('/') POST
+# @destinations_blueprint.route('/destinations/create', method =['POST'])
+# def create_destination_country_page():
+
+
+
+
+#     return render_template
+
 # SHOW ('/id') GET
 # EDIT ('/id/edit') GET
 # UPDATE ('/id') POST
