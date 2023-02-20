@@ -4,7 +4,7 @@
 
 <a href="/countries/new">Add a new Country</a>
 
-<form action="/contries/create" method="post">
+<form action="/countries/create" method="post">
     <label for="name"></label>
     <input type="text" id="name" name="name">
 
@@ -15,16 +15,9 @@
 <ul>
 {% for country in countries %}
     <li>
-        <p>Country: {{country.name}}</p>
+        <p>Country: <a href="/countries/show/{{country.id}}">{{country.name}}</a></p>
         
-            {% for destination in destinations %}
-            <ul>
-                {% if destination.country.id == country.id %}
-                <li>{{destination.name}}</li>
-                {% endif %}     
-            </ul>
-            {% endfor %}
-              <a href="/destinations/new/{{loop.index0}}">Add a destination</a>
+         
     </li>
 {% endfor %}
 </ul>

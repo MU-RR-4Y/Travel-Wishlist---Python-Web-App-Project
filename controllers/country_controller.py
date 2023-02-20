@@ -20,7 +20,29 @@ def new_country():
     return render_template('countries/new.html')
 
 # CREATE ('/') POST
+@countries_blueprint.route('/countries/create', methods=['POST'])
+def add_country():
+    name = request.form['name']
+    country = Country(name)
+    country_repo.save(country)
+    return redirect('/countries')
+
+
 # SHOW ('/id') GET
+@countries_blueprint.route('/countries/show/<id>')
+def show_country(id):
+    country = country_repo.select(id)
+    destinations = destination_repo.select_all()
+    destination_list = destination_repo.select_all()
+    destinations=[]
+    for destination in destination_list:
+        if destination.country.id == int(country.id):
+            destinations.append(destination)
+    return render_template('/countries/show.html', selected_country = country, destinations = destinations)
+
+    
+
+
 # EDIT ('/id/edit') GET
 # UPDATE ('/id') POST
 # DELETE ('/id/delete') POST

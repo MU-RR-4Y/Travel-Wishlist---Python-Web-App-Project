@@ -17,13 +17,16 @@ def destinations():
 # NEW ('/new') GET
 @destinations_blueprint.route('/destinations/new/<id>')
 def add_destintion_to_country(id):
-    country = country_repo.select((int(id)+1))
+    country = country_repo.select((int(id)))
     return render_template('/destinations/new2.html', country = country)
     
 
 
-# CREATE ('/') POST
-# @destinations_blueprint.route('/destinations/create', method =['POST'])
+# # CREATE ('/') POST
+# @destinations_blueprint.route('/destinations/create/country', method =['POST'])
+# def_add_destination()
+
+
 # def create_destination_country_page():
 
 

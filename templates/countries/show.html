@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>Country: {{selected_country.name}}</a></p>
+        
+                {% for destination in destinations %}
+                <ul>
+                    <li>{{destination.name}}</li>
+                       
+                </ul>
+                {% endfor %}
+              <a href="/destinations/new/{{selected_country.id}}">Add a destination</a>
+    
+{% endblock content %}
