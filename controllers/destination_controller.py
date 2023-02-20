@@ -16,6 +16,14 @@ def destinations():
     return render_template('/destinations/index.html', destinations = destinations, countries = countries )
 
 # NEW ('/new') GET
+# request form to add destination from destination page - new.html
+@destinations_blueprint.route('/destinations/new')
+def add_destintion():
+    countries =country_repo.select_all()
+    return render_template('/destinations/new.html', countries = countries)
+
+
+# request form to add destination from a country page - new2.html
 @destinations_blueprint.route('/destinations/new/<id>')
 def add_destintion_to_country(id):
     country = country_repo.select((int(id)))
@@ -23,7 +31,28 @@ def add_destintion_to_country(id):
     
 
 
-# # CREATE ('/') POST
+# CREATE ('/') POST
+# Add a adestination from the destination page
+@destinations_blueprint.route('/destinations/create', methods =['POST'])
+def create_destination():
+    name = request.form['name']
+    information =request.form['info']
+    country_form = request.form['country']
+    countries = country_repo.select_all()
+    for country_item in countries:
+        if country_form == country_item.name:
+            country = country_item
+
+    destination = Destination(name,country,information)
+    destination_repo.save(destination)
+    return redirect('/destinations')
+    return
+
+
+
+
+
+# Add a destination from a country page
 @destinations_blueprint.route('/destinations/create/<id>', methods =['POST'])
 def create_destination_country_page(id):
     name = request.form['name']
