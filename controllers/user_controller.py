@@ -22,8 +22,9 @@ def users():
 @users_blueprint.route('/users/<id>')
 def users_show(id):
     user = user_repo.select(id)
-    destinations = user_repo.destinations(user)
-    return render_template('users/show.html', user = user, destinations = destinations)
+    visited = user_repo.destinations(user)
+    wishlist = user_repo.wishlist(user)
+    return render_template('users/show.html', user = user, visited_destinations = visited, wish_destinations = wishlist)
 
 # EDIT ('/id/edit') GET
 # UPDATE ('/id') POST

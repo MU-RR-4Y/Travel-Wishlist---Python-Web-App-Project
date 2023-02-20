@@ -6,7 +6,7 @@
         {% for destination in destinations %}
             <li>
                 <p>Name : <a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
-                <p>Country : {{destination.country.name}}</p>
+                <p>Country : <a href="/countries/show/{{destination.country.id}}">{{destination.country.name}}</a></p>
                 <p>Information : {{destination.information}}</p>
                 <form action="/destination/{{destination.id}}/delete" method="post">
                         <button type="submit">Remove Destination</button>

@@ -55,6 +55,19 @@ def destinations(user):
     return destinations
 
 
+def wishlist(user):
+    destinations =[]
+    sql =''' SELECT destinations.* FROM destinations
+        INNER JOIN wishlists
+        ON wishlists.destination_id = destinations.id   
+        WHERE wishlists.user_id = %s'''      
+    values =[user.id]
+    results = run_sql(sql,values)
+    for result in results:
+        country = country_repo.select(int(result['country_id']))
+        destination = Destination(result['name'], result['information'], country,result['id'])
+        destinations.append(destination)
+    return destinations
 
 
 def visited_on_destinations(destination):
@@ -71,15 +84,3 @@ def visited_on_destinations(destination):
     return users
 
 
-# def wiishlist(user):
-#     destinations =[]
-#     sql =''' SELECT destinations.* FROM destinations
-#         INNER JOIN visits
-#         ON visits.destination_id = destinations.id   
-#         WHERE visits.user_id = %s'''      
-#     values =[user.id]
-#     results = run_sql(sql,values)
-#     for result in results:
-#         destination = destination(result['name'], result['infromation'], result,result['id'])
-#         destinations.append(destination)
-#     return destinations

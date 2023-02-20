@@ -3,11 +3,14 @@
 {% block content %}
     <p>Name : {{user.name}}</p>
     <p>Visited:</p>
-    {% for destination in destinations  %}
-        <p>{{destination.name}}</p>
+    {% for destination in visited_destinations  %}
+        <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
     {% endfor %}
 
     <p>{{user.name}}'s Wishlist:</p>
+    {% for destination in wish_destinations  %}
+        <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
+    {% endfor %}
     
     
 {% endblock content %}
