@@ -4,11 +4,13 @@ from models.country import Country
 from models.destination import Destination
 from models.user import User
 from models.visit import Visit
+from models.wishlists import Wishlist
 
 import repositories.country_repository as country_repo
 import repositories.destination_respository as destination_repo
 import repositories.user_repository as user_repo
 import repositories.visit_repository as visit_repo
+import repositories.wishlist_repo as wishlist_repo
 
 
 
@@ -90,6 +92,14 @@ visit_repo.save(visit_1)
 visit_repo.save(visit_2)
 visit_repo.save(visit_3)
 visit_repo.save(visit_4)
+
+
+
+# TEST WISHLIST
+
+wishlist_item1 = Wishlist(user_1, destination_6)
+
+wishlist_repo.save(wishlist_item1)
 
 
 pdb.set_trace()

@@ -4,7 +4,7 @@ from models.country import Country
 import repositories.destination_respository as destination_repo
 import repositories.user_repository as user_repo
 import repositories.country_repository as country_repo
-import repositories.destination_respository as destination_repo
+
 
 def save(visit):
     sql = '''INSERT INTO visits (user_id, country_id, date, rating, comment) VALUES (%s, %s,%s,%s, %s) RETURNING id'''
