@@ -1,19 +1,19 @@
 import unittest
 from models.visit import Visit
-from models.destination import Destination
+from models.country import Country
 from models.user import User
 
 class TestVisit(unittest.TestCase):
     def setUp(self):
-        self.destination = Destination('Rome', 'Italy','Capital of Italy')
+        self.country = Country('Italy')
         self.user = User('Dave')
-        self.visit = Visit(self.user, self.destination,'20/01/2023', 4, 'Rome was amazing')
+        self.visit = Visit(self.user, self.country,'20/01/2023', 4, 'Rome was amazing')
 
     def test_visit_user(self):
         self.assertEqual('Dave', self.visit.user.name)
 
-    def test_visit_destinaton(self):
-        self.assertEqual('Rome', self.visit.destination.name)
+    def test_visit_country(self):
+        self.assertEqual('Italy', self.visit.country.name)
 
     def test_visit_date(self):
         self.assertEqual('20/01/2023', self.visit.date)
