@@ -5,7 +5,7 @@
     <ul>
         {% for destination in destinations %}
             <li>
-                <p>Name : {{destination.name}}</p>
+                <p>Name : <a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
                 <p>Country : {{destination.country.name}}</p>
                 <p>Information : {{destination.information}}</p>
                 <form action="/destination/{{destination.id}}/delete" method="post">

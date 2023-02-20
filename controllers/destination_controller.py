@@ -59,6 +59,15 @@ def create_destination_country_page(id):
     return redirect('/countries')
 
 # SHOW ('/id') GET
+@destinations_blueprint.route('/destinations/show/<id>')
+def show_destination(id):
+    destination = destination_repo.select(id)
+    return render_template('/destinations/show.html', destination = destination)
+
+
+
+
+
 # EDIT ('/id/edit') GET
 # UPDATE ('/id') POST
 
