@@ -1,7 +1,8 @@
 from db.run_sql import run_sql
 from models.user import User
 from models.country import Country
-import repositories.destination_respository as destination_repo
+from models.destination import Destination
+import repositories.country_repository as country_repo
 
 
 def save(user):
@@ -39,37 +40,30 @@ def delete_all():
 
 
 
-# def destinations(user):
-#     countries =[]
-#     destinations = []
-#     sql = ''' SELECT countries.* FROM countries
-#         INNER JOIN visits
-#         ON visits.country_id = countries.id   
-#         WHERE visits.user_id = %s'''    
-#     values =[user.id]
-#     results = run_sql(sql,values)
-#     for result in results:
-#         country = Country(result['name'],result['id'])
-#         countries.append(country)
-       
-#     destinations_list = destination_repo.select_all()
-#     for destination in destinations_list:
-#             for country in countries:
-#                 if destination.country.id == country.id:
-#                     destinations.append(destination)
+def destinations(user):
+    destinations = []
+    sql = ''' SELECT destinations.* FROM destinations
+        INNER JOIN visits
+        ON visits.destination_id = destinations.id   
+        WHERE visits.user_id = %s'''    
+    values =[user.id]
+    results = run_sql(sql,values)
+    for result in results:
+        country = country_repo.select(int(result['country_id']))
+        destination = Destination(result['name'],result['information'], country, result['id'])
+        destinations.append(destination)
+    return destinations
 
-#     for destination in destinations:
-#         if 
 
-#     return destinations
 
-def visited_on_destinations(country):
+
+def visited_on_destinations(destination):
     users =[]
     sql = ''' SELECT users.* FROM users
         INNER JOIN visits
         ON visits.user_id = users.id   
-        WHERE visits.country_id = %s'''    
-    values =[country.id]
+        WHERE visits.destination_id = %s'''    
+    values =[destination.id]
     results = run_sql(sql,values)
     for result in results:
         user = User(result['name'],result['id'])

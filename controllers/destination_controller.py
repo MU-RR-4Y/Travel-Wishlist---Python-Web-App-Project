@@ -63,7 +63,7 @@ def create_destination_country_page(id):
 @destinations_blueprint.route('/destinations/show/<id>')
 def show_destination(id):
     destination = destination_repo.select(id)
-    users = user_repo.visited_on_destinations(destination.country)
+    users = user_repo.visited_on_destinations(destination)
     return render_template('/destinations/show.html', destination = destination, users = users)
 
 

@@ -50,6 +50,12 @@ def delete(id):
     run_sql(sql, values)
 
 
+def get_country(id):
+    country_list = country_repo.select_all()
+    for country in country_list:
+        if country.id == int(id):
+            return country
+
 
 
 

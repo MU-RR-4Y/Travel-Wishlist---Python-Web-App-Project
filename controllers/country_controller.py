@@ -31,7 +31,6 @@ def add_country():
 @countries_blueprint.route('/countries/show/<id>')
 def show_country(id):
     country = country_repo.select(id)
-    destinations = destination_repo.select_all()
     destination_list = destination_repo.select_all()
     destinations=[]
     for destination in destination_list:
