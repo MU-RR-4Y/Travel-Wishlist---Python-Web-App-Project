@@ -46,11 +46,7 @@ def create_destination():
     destination = Destination(name,country,information)
     destination_repo.save(destination)
     return redirect('/destinations')
-    return
-
-
-
-
+    
 
 # Add a destination from a country page
 @destinations_blueprint.route('/destinations/create/<id>', methods =['POST'])
@@ -65,4 +61,16 @@ def create_destination_country_page(id):
 # SHOW ('/id') GET
 # EDIT ('/id/edit') GET
 # UPDATE ('/id') POST
+
 # DELETE ('/id/delete') POST
+#Delete from destination page
+@destinations_blueprint.route('/destination/<id>/delete', methods=['POST'])
+def delete_destination(id):
+    destination_repo.delete(id)
+    return redirect ('/destinations')
+
+#delete from country page
+@destinations_blueprint.route('/destination/<id>/delete/country', methods=['POST'])
+def delete_destination_from_country(id):
+    destination_repo.delete(id)
+    return redirect('/countries')

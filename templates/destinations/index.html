@@ -8,6 +8,9 @@
                 <p>Name : {{destination.name}}</p>
                 <p>Country : {{destination.country.name}}</p>
                 <p>Information : {{destination.information}}</p>
+                <form action="/destination/{{destination.id}}/delete" method="post">
+                        <button type="submit">Remove Destination</button>
+                </form>
 
             </li>
             
