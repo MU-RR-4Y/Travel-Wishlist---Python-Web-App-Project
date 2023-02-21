@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <form action="/users/create" method="post">
+        <label for="name"></label>
+        <input type="text" id="name" name="name" required>
+
+        <button type="submit">Add User</button>
+
+    </form>
+
     <ul>
         {% for user in users %}
             <li>

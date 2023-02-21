@@ -17,6 +17,12 @@ def users():
 # NEW ('/new') GET
 
 # CREATE ('/') POST
+@users_blueprint.route('/users/create', methods=['POST'])
+def add_country():
+    name = request.form['name']
+    user = User(name)
+    user_repo.save(user)
+    return redirect('/users')
 
 # SHOW ('/id') GET
 @users_blueprint.route('/users/<id>')
