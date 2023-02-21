@@ -18,10 +18,15 @@ def visit():
 
 
 
-@visits_blueprint.route('/visits/<index>')
-def show_visit(index):
-    visit = visit_repo.select(int(index))
-    return render_template('/visits/show.html', visit =visit)
+# @visits_blueprint.route('/visits/<index>')
+# def show_visit(index):
+#     visit = visit_repo.select(int(index))
+#     return render_template('/visits/show.html', visit =visit)
 
 
-
+# NEW ('/new') GET
+@visits_blueprint.route('/visits/new')
+def add_visit():
+    destinations = destination_repo.select_all()
+    users = user_repo.select_all()
+    return render_template('/visits/new.html', destinations = destinations, users = users)

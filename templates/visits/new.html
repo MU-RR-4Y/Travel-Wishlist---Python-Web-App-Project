@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>New Visit</h1>
+
+    <form action="/visits/create" method="post">
+        <div class=" visit-form">
+        <label for="user">user</label>
+        <select name="user" id="user">
+            {% for user in users %}
+                <option value="{{user.name}}">{{user.name}}</option>                
+            {% endfor %}
+        </select>
+        
+
+        <label for="destination">Destination</label>
+        <select name="destination" id="destination">
+            {% for destination in destinations %}
+                <option value="{{destination.name}}">{{destination.name}}</option>                
+            {% endfor %}
+        </select>
+        
+        
+        <label for="date">Date</label>
+        <input type="text" id="date" name="date">
+
+        <label for="comment">Comment</label>
+        <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+
+        <button type="submit">Add destination</button>
+        </div>
+    </form>
+
+
+    
+{% endblock content %}
