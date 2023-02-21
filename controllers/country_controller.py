@@ -22,7 +22,9 @@ def new_country():
 @countries_blueprint.route('/countries/create', methods=['POST'])
 def add_country():
     name = request.form['name']
-    country = Country(name)
+    climate = request.form['climate']
+    currency = request.form['currency']
+    country = Country(name, climate, currency)
     country_repo.save(country)
     return redirect('/countries')
 
