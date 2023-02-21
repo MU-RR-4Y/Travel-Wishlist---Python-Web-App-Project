@@ -30,3 +30,40 @@ def add_visit():
     destinations = destination_repo.select_all()
     users = user_repo.select_all()
     return render_template('/visits/new.html', destinations = destinations, users = users)
+
+# add a visit from the destination page
+@visits_blueprint.route('/visits/new/<id>')
+def add_visit_from_destination(id):
+    destination = destination_repo.select(id)
+    users = user_repo.select_all()
+    return render_template('/visits/new2.html', destination = destination, users = users)
+
+
+# CREATE ('/') POST
+# add visit from visit page
+
+@visits_blueprint.route('/visits/create', methods =['POST'])
+def create_visit():
+    user = user_repo.select(request.form['user']) 
+    destination = destination_repo.select(request.form['destination']) 
+    date = request.form['date']
+    rating = request.form['rating']
+    comment = request.form['comment']
+    visit = Visit(user,destination,date, rating, comment)
+    visit_repo.save(visit)
+    return redirect('/visits')
+    
+# add visit from destination page
+@visits_blueprint.route('/visits/<id>/create', methods =['POST'])
+def create_visit_from_destination():
+    user = user_repo.select(request.form['user']) 
+    destination = destination_repo.select(request.form['destination']) 
+    date = request.form['date']
+    rating = request.form['rating']
+    comment = request.form['comment']
+    visit = Visit(user,destination,date, rating, comment)
+    visit_repo.save(visit)
+    return redirect('/destinations')
+    
+    
+  
