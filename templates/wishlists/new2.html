@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add to {{user.name}}'s Wishlist</h1>
+
+<form action="/wishlists/create" method="post">
+    <div class=" wishlist-form">
+    <label for="user">user</label>
+    <select name="user" id="user">
+        
+            <option value="{{user.id}}">{{user.name}}</option>                
+        
+    </select>
+    
+
+    <label for="destination">Destination</label>
+    <select name="destination" id="destination">
+        {% for destination in destinations %}
+            <option value="{{destination.id}}">{{destination.name}}</option>                
+        {% endfor %}
+    </select>
+
+    <button type="submit">Add to Wishlist</button>
+</form>
+
+
+
+
+
+{% endblock content %}

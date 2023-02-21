@@ -8,6 +8,7 @@
     {% endfor %}
 
     <p>{{user.name}}'s Wishlist:</p>
+    <a href="/wishlists/new/{{user.id}}/user">Add to Wishlist</a>
     {% for destination in wish_destinations  %}
         <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
     {% endfor %}
