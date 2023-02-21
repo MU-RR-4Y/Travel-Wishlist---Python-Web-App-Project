@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Edit {{country.name}}</h2>
+    
+    <form action="/countries/{{country.id}}/update" method="post">
+        <div>
+            <label for="climate">Climate:</label>
+            <input type="text" id="climate" name="climate" value="{{country.climate}}" required autofocus>
+        </div>
+        <div>
+            <label for="currency">Currency:</label>
+            <input type="text" id="currency" name="currency" value="{{country.currency}}" required >
+        </div>
+        <button type="'submit">Save changes</button>
+        
+    </form>
+        <h3>Destinations</h3> 
+
+        <ul>
+        {% for destination in destinations %}
+        <li>
+            <p>{{destination.name}}</p>
+            <form action="/destination/{{destination.id}}/delete/country" method="post">
+            <button type="submit">remove</button>
+            </form>
+
+            
+        </li>
+        {% endfor %}
+        </ul>
+       
+        
+
+        
+
+
+
+
+
+{% endblock content %}

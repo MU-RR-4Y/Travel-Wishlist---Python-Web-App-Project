@@ -42,5 +42,35 @@ def show_country(id):
 
 
 # EDIT ('/id/edit') GET
+
+@countries_blueprint.route('/countries/<id>/edit')
+def edit_country(id):
+    destinations =[]
+    country = country_repo.select(id)
+    destination_list = destination_repo.select_all()
+    for destination in destination_list:
+        if destination.country.id ==int(country.id):
+            destinations.append(destination)
+    return render_template('/countries/edit.html', country = country, destinations = destinations)
+
+
 # UPDATE ('/id') POST
+
+@countries_blueprint.route('/countries/<id>/update', methods=['POST'])
+def update_country(id):
+    country = country_repo.select(id)
+    country.climate = request.form['climate']
+    country.currency = request.form['currency']
+    country_repo.update_country(country)
+    return redirect('/countries')
+
+
+
+
+
+    country = Country
+
+
+
+
 # DELETE ('/id/delete') POST

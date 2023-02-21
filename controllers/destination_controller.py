@@ -33,7 +33,7 @@ def add_destintion_to_country(id):
 
 
 # CREATE ('/') POST
-# Add a adestination from the destination page
+# Add a destination from the destination page
 @destinations_blueprint.route('/destinations/create', methods =['POST'])
 def create_destination():
     name = request.form['name']
@@ -78,10 +78,10 @@ def show_destination(id):
 @destinations_blueprint.route('/destination/<id>/delete', methods=['POST'])
 def delete_destination(id):
     destination_repo.delete(id)
-    return redirect ('/destinations')
+    return redirect('/destinations')
 
 #delete from country page
 @destinations_blueprint.route('/destination/<id>/delete/country', methods=['POST'])
 def delete_destination_from_country(id):
     destination_repo.delete(id)
-    return redirect('/countries')
+    return redirect(request.referrer)

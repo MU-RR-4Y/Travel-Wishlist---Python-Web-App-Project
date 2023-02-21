@@ -16,9 +16,9 @@ import repositories.wishlist_repo as wishlist_repo
 
 # # TEST Country
 
-country_1 = Country('Italy')
-country_2 = Country('France')
-country_3 = Country('America')
+country_1 = Country('Italy', 'Warm', 'Euro')
+country_2 = Country('France', 'Warm', 'Euro')
+country_3 = Country('America','Mild', 'Dollar')
 
 country_repo.save(country_1) 
 country_repo.save(country_2)
