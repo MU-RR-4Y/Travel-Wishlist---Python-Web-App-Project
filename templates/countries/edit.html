@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Edit {{country.name}}</h2>
+    <h2>Edit: {{country.name}}</h2>
     
-    <form action="/countries/{{country.id}}/update" method="post">
+    <form action="/countries/{{country.id}}" method="post">
+        <!-- <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{country.name}}" required autofocus>
+        </div> -->
+
         <div>
             <label for="climate">Climate:</label>
-            <input type="text" id="climate" name="climate" value="{{country.climate}}" required autofocus>
+            <input type="text" id="climate" name="climate" value="{{country.climate}}" required >
         </div>
         <div>
             <label for="currency">Currency:</label>

@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.country import Country
+import repositories.country_repository as country_repo
 
 def save(country):
     sql = '''INSERT INTO countries (name, climate, currency)
@@ -41,6 +42,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update_country(country):
-    sql = '''UPDATE countries SET (name, climate, currency) = (%s, %s, %s) WHERE id = %s  '''
-    values = [country.name, country.climate, country.currency]
+    sql = '''UPDATE countries SET (climate, currency) = ( %s, %s) WHERE id = %s'''
+    values = [country.climate, country.currency, country.id]
     run_sql(sql,values)
+    
