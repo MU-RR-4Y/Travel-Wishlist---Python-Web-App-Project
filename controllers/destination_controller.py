@@ -2,9 +2,11 @@ from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 from models.country import Country
 from models.destination import Destination
+from models.wishlists import Wishlist
 import repositories.country_repository as country_repo
 import repositories.destination_respository as destination_repo
 import repositories.user_repository as user_repo
+import repositories.wishlist_repo as wishlist_repo
 
 destinations_blueprint = Blueprint('destinations', __name__)
 
@@ -58,6 +60,9 @@ def create_destination_country_page(id):
     destination = Destination(name,country,information)
     destination_repo.save(destination)
     return redirect('/countries')
+
+
+
 
 # SHOW ('/id') GET
 @destinations_blueprint.route('/destinations/show/<id>')
