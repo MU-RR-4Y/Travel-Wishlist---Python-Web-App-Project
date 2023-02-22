@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="flex">
     <h1>New Destination</h1>
 
-    <form action="/destinations/create/{{country.id}}" method="post">
-        <div class=" destination-form">
+    <form class='form' action="/destinations/create/{{country.id}}" method="post">
+        
         <label for="name">Destination Name</label>
         <input type="text" id="name" name="name">
         
@@ -16,7 +17,7 @@
         <button type="submit">Add destination</button>
         </div>
     </form>
-
+</div>
 
     
 {% endblock content %}

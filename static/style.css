@@ -9,9 +9,10 @@ body{
     display : flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin : auto;
     height : 100%;
+    overflow: auto;  
 }
 
  header {
@@ -107,12 +108,18 @@ nav a {
     align-items: center;
     width: 100%;
     height: 100%;
+    overflow: auto;  
 
 }
 
 .container{
     width: 100%;
     height: 100%;
+}
+.country-heading{
+    display:flex;
+    justify-content: center;
+    
 }
 
 .grid{
@@ -134,25 +141,7 @@ nav a {
 .grid-span-4{
     grid-column: span 4;  
 }
-/*
 
-
-
-
-.new-destination{
-    padding :1rem;
-    text-align: center;
-    border-color: rgba(118, 116, 116, 0.5);
-    border-style: dashed;
-   
-    width : 25%;
-    height:10rem;
-    margin: auto;
-    border-radius: 0.25rem;
-
-}
-
- */
 
 
  /* CARDS */
@@ -177,7 +166,22 @@ nav a {
     background-color: #FFB340;
     padding: 1rem 2rem;
     margin: 1rem;
-    width: 60%;
+    width: 50%;
+    height: 50%;
+    color: white;
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    
+}
+
+.card3{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    font-weight: bolder;
+    background-color: #FFB340;
+    padding: 1rem 2rem;
+    margin: 1rem;
     color: white;
     display : flex;
     justify-content: center;
@@ -207,21 +211,6 @@ nav a {
 
 }
 
-.user-card{
-    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
-    background-color: beige;
-    padding: 1rem 2rem;
-    margin: 1rem;
-    min-width: 0;
-    width: 30%;
-    display : flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column; */
-} */
-
-/* FORMS */
-
 .form{
     
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
@@ -234,4 +223,56 @@ nav a {
     flex-direction: column;
 
 } 
+
+.user-card{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    background-color: beige;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    min-width: 0;
+    width: 30%;
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column; */
+} 
+
+.country-card{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    background-color: beige;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    min-width: 0;
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column; */
+} 
+
+.attention-card{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    background-color: mediumblue;
+    color: white;
+    font-size: xx-large;
+    opacity: 0.9;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.centered{
+    grid-column-start:2;
+    grid-column-end: 3;
+    text-align: center;
+}
+
+
+
+/* FORMS */
+
+
 

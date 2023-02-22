@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="flex">
     <h2>Edit: {{country.name}}</h2>
     
+    <div class="form">
     <form action="/countries/{{country.id}}" method="post">
-        <!-- <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="{{country.name}}" required autofocus>
-        </div> -->
-
         <div>
             <label for="climate">Climate:</label>
             <input type="text" id="climate" name="climate" value="{{country.climate}}" required >
@@ -20,27 +17,21 @@
         <button type="'submit">Save changes</button>
         
     </form>
+    </div>
+    <div class="form ">
         <h3>Destinations</h3> 
-
-        <ul>
+        <ul class="list-style-none">
         {% for destination in destinations %}
         <li>
-            <p>{{destination.name}}</p>
+            
             <form action="/destination/{{destination.id}}/delete/country" method="post">
+            <label for="">{{destination.name}}</label>
             <button type="submit">remove</button>
             </form>
-
-            
         </li>
         {% endfor %}
         </ul>
-       
-        
-
-        
-
-
-
-
+        </div>
+</div>
 
 {% endblock content %}

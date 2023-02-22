@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="flex">
     <h1>New Visit</h1>
 
     <form action="/visits/create" method="post">
-        <div class=" visit-form">
+        <div class=" form">
         <label for="user">user</label>
         <select name="user" id="user">
             {% for user in users %}
@@ -14,10 +15,8 @@
         
 
         <label for="destination">Destination</label>
-        <select name="destination" id="destination">
-            
+        <select name="destination" id="destination"> 
                 <option value="{{destination.id}}">{{destination.name}}</option>                
-            
         </select>
         
         
@@ -35,5 +34,5 @@
     </form>
 
 
-    
+</div>  
 {% endblock content %}

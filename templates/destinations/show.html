@@ -1,25 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="flex">
     <h2>{{destination.name}}</h2> 
-
+    <div class="user-card">
     <p>Country : <a href="/countries/show/{{destination.country.id}}">{{destination.country.name}}</a></p>
     <p>Information : {{destination.information}}</p>
 
     <p>Visted By:
-        <ul>
+        <ul class=" list-style-none">
             {% for user in users %}
                 <li><a href="/users/{{user.id}}">{{user.name}}</a></li>
             {% endfor %}
         </ul>
     </p>
+    </div>
 
+    <div class="user-card">
     <form action="/destination/{{destination.id}}/delete" method="post">
             <button type="submit">Remove Destination</button>
     </form>
 
     <a href="/visits/new/{{destination.id}}">Add a Visit</a>
     <a href="/wishlists/new/{{destination.id}}">Add to Wishlist</a>
-    
+    </div>
+</div>   
 {% endblock content %}

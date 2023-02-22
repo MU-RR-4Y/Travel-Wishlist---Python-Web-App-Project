@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="grid" >
+<div class="grid container grid-span-3" >
+    <div class="grid-span-3 centered">
+        <h1>Visits</h1>
+    </div>
     
     
-    <ul class = 'list'  >
-        
-      
+    <div class ='grid container grid-span-3'>
         {% for visit in visits %}
-        <li class = 'card' >
+        <div class="card" >
             <p>Visited by : {{visit.user.name}} </p>
             <p>Destination : {{visit.destination.name}}</p>
             <p>Date : {{visit.date}}</p>
@@ -25,21 +26,21 @@
                 {% else %}
                     &#11088
                     
-                {% endif %}
-                    
+                {% endif %}   
              </p>
             <p>Comment : {{visit.comment}}</p>
-            
-        </li>
+        </div>
+        
         
         {% endfor %} 
-        <div class="form">
-            <form action="">
-            <a href="/visits/new">Add a visit</a>
-        </form>
-        </div>
+    </div> 
+    
+    
+     <div class="card2 grid-span-2">
+        <a href="/visits/new">Add a visit</a>
+    </div>
       
-    </ul>
+    
 </div>
     
 {% endblock content %}

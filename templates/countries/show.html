@@ -1,25 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div >
+<div class="grid container grid-span-3">
 
-  <h1>{{selected_country.name}}</h1>
-  <div class="card">
-    <p>Climate : {{selected_country.climate}}</p>
-    <p>Currency : {{selected_country.currency}}</p>
+  <div class=" user-card grid-span-2 country-heading">
+    <h1>{{selected_country.name}}</h1>
   </div>
+
   
-  {% for destination in destinations %}
-  <ul>
-    <div class="card">
-      <li class="list-style-none">
-        <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
-        
-      </li>          
+
+    <div class="country-card ">
+      <p>Climate : {{selected_country.climate}}</p>
+      <p>Currency : {{selected_country.currency}}</p>
     </div>
-  </ul>
-  {% endfor %}
-  <div>
+    <div class="grid grid-span-3">
+    {% for destination in destinations %}
+    <ul>
+      <div class="card">
+        <li class="list-style-none">
+          <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
+          
+        </li>          
+      </div>
+    </ul>
+    {% endfor %}
+  </div>
+    <div  class='grid-span-3'>
     <form class='form'action="">
 
       <a href="/destinations/new/{{selected_country.id}}">Add a destination</a>

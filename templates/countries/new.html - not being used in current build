@@ -1,4 +1,9 @@
-{% extends 'base.html' %}
+
+not in use - in current build - currently abel to add a country from country-index.html. 
+this is for a separte page where you create a new country but also add or create new destinations at the smame time.
+
+
+<!-- {% extends 'base.html' %}
 
 {% block content %}
     
@@ -12,7 +17,7 @@
 <br>
 <br>
 
-<!-- FORM to add destinations -->
+FORM to add destinations
 
 <form action="/destinations/create/country" method="post">
     <div class=" destination-form">
@@ -31,4 +36,4 @@
 </form>
 
 
-{% endblock content %}
+{% endblock content %} 
