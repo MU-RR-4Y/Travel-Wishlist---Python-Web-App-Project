@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Name : {{user.name}}</p>
-    <p>Visited:</p>
-    {% for destination in visited_destinations  %}
-        <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
-    {% endfor %}
+    <div class="box">
 
-    <p>{{user.name}}'s Wishlist:</p>
-    <a href="/wishlists/new/{{user.id}}/user">Add to Wishlist</a>
-    {% for destination in wish_destinations  %}
-        <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
-    {% endfor %}
-    
-    
+        <div class ='user-card'>  
+            <h2>{{user.name}}</h2>
+        </div>      
+        <div class ='user-card'>    
+            <p>Visited:</p>
+            {% for destination in visited_destinations  %}
+            <p><a href="/destinations/show/{{destination.id}}">{{destination.name}} &#128681</a></p>
+            {% endfor %}
+        </div>
+        <div class ='user-card'>  
+            <p>{{user.name}}'s Wishlist:</p>
+            <a href="/wishlists/new/{{user.id}}/user">Add to Wishlist</a>
+            {% for destination in wish_destinations  %}
+            <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
+            {% endfor %}
+        </div>
+        
+    </div>
 {% endblock content %}

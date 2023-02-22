@@ -1,24 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <a href="/destinations/new">Add a Destination</a>
-    <ul>
+<div class="grid">
+    
+    <div class ='new-destination'>
+        <a href="/destinations/new" class="add-destination-link">Add a Destination</a>
+    </div>
+    <ul >
         {% for destination in destinations %}
-            <li>
-                <p>Name : <a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
+        
+        <div class =card>
+            <li class = list-style-none>
+                <p >Name : <a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
                 <p>Country : <a href="/countries/show/{{destination.country.id}}">{{destination.country.name}}</a></p>
                 <p>Information : {{destination.information}}</p>
-                <form action="/destination/{{destination.id}}/delete" method="post">
-                        <button type="submit">Remove Destination</button>
+                <form class='remove-form'action="/destination/{{destination.id}}/delete" method="post">
+                    <button class='remove-button' type="submit"> Remove &#x1F5D1;</button>
                 </form>
-
+                
             </li>
-            
+        </div>
+        
         {% endfor %}
-
-
-
-
+        
+        
+        
+        
     </ul>
-  
+
+</div>
 {% endblock content %}

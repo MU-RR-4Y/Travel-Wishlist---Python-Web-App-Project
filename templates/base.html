@@ -9,34 +9,39 @@
     <title>{{title}}</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <div>
-                    <li><a href="/">Home</a></li>
-                </div>
-                <div>
-                    <li><a href="/users">Users</a></li>
-                </div>
-                <div>
-                    <li><a href="/countries">Countries</a></li>
-                </div>
-                <div>
-                    <li><a href="/destinations">Destination</a></li>
-                </div>
-                <div>
-                    <li><a href="/visits">Visits</a></li>
-                </div>
-            </ul>
-        </nav>
-    </header>
-    <main>
-    {% block content %}
-        
-    {% endblock content %}
-    </main>
-    <footer>
-        this is a footer
-    </footer>
-</body>
-</html>
+    <div class="box">
+
+        <header >
+            <nav>
+                <ul>
+                    <div>
+                        <li><a href="/">Home</a></li>
+                    </div>
+                    <div>
+                        <li><a href="/users">Users</a></li>
+                    </div>
+                    <div>
+                        <li><a href="/countries">Countries</a></li>
+                    </div>
+                    <div>
+                        <li><a href="/destinations">Destination</a></li>
+                    </div>
+                    <div>
+                        <li><a href="/visits">Visits</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block content %}
+            
+            {% endblock content %}
+        </main>
+        <footer>
+            <p>
+                &copyTravel Wishlist
+            </p>
+        </footer>
+    </div>
+    </body>
+    </html>

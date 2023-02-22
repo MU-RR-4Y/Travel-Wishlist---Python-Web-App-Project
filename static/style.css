@@ -1,15 +1,53 @@
 body{
-    display: grid;
-    align-content: space-between;
     margin: 0;
     height: 100vh;
-    width: 100%;
+    /* background-color: red; */
+    font-family: fantasy;
+}
+
+
+
+.box{
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin : auto;
+    height : 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #FEE81E;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: inherit;
+}
+
+footer{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #FEE81E;
+    height: 7.5rem;
+    width: inherit;
+}
+
+main {
+    width: inherit;
+    height: inherit;
+    background-image: url(IMG_552_1647867573.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover ;
+    
 }
 
 
 nav {
     display : flex;
+    font-size: 2rem;
     justify-content: flex-end;
+    margin: 0.5rem;
 }
 
 nav ul {
@@ -27,25 +65,94 @@ nav ul li {
 nav a {
     color: #ffffff;
     text-decoration: none;
-    transition: 0.5s;
-}
-header {
-    display: flex;
-    flex-direction: column-reverse;
-    background-color: #FEE81E;
-    height: 7.5rem;
-    padding-bottom: 1rem;
+    transition: 0.5s; 
 }
 
-footer{
-    display: flex;
-    flex-direction: column-reverse;
+.card{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     background-color: #FEE81E;
-    height: 7.5rem;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
 
-.destination-form{
+/* .destination-form{
     display: flex;
     flex-direction: column;
     width: 30%;
+} */
+
+
+
+.grid{
+    display: grid;
+    
+}
+
+.list-style-none{
+    list-style: none;
+}
+
+/* .add-destination-link {
+border: dotted;
+border-radius: 0.5rem;
+margin: 2rem;
+}  */
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:  auto 1fr auto ;
+    margin :0;
+    padding: 0;
+}
+
+.new-destination{
+    padding :1rem;
+    text-align: center;
+    border-color: rgba(118, 116, 116, 0.5);
+    border-style: dashed;
+   
+    width : 25%;
+    height:10rem;
+    margin: auto;
+    border-radius: 0.25rem;
+
+}
+
+.users-form{
+    display: flex;
+    justify-content: center;
+    margin : 1rem;
+    padding:  2rem;
+    align-items: center;
+    border: dotted;
+    border-radius: 0.5rem;
+    
+}
+
+.remove-form{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.remove-button {
+    background: transparent;
+
+}
+
+.user-card{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    background-color: beige;
+    padding: 1rem 2rem;
+    margin: 1rem;
+
+    width: 30%;
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }

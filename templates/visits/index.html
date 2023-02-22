@@ -1,22 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul>
-
+<div>
+    
     <a href="/visits/new">Add a visit</a>
-    
-    {% for visit in visits %}
-    <li>
-        <p>Visited by : {{visit.user.name}}</p>
-        <p>Destination : {{visit.destination.name}}</p>
-        <p>Date : {{visit.date}}</p>
-        <p>Rating : {{visit.rating}}</p>
-        <p>Comment : {{visit.comment}}</p>
-      
+    <ul>
         
-    </li>
+        
+        {% for visit in visits %}
+        <li class = 'card' >
+            <p>Visited by : {{visit.user.name}} </p>
+            <p>Destination : {{visit.destination.name}}</p>
+            <p>Date : {{visit.date}}</p>
+            <p>Rating : 
+                {% if visit.rating == 5 %}
+                    &#11088&#11088&#11088&#11088&#11088
+                                    
+                {% elif visit.rating == 4 %}
+                    &#11088&#11088&#11088&#11088
+                {% elif visit.rating == 3 %}
+                    &#11088&#11088&#11088
+                {% elif visit.rating == 2 %}
+                    &#11088&#11088
+                {% else %}
+                    &#11088
+                    
+                {% endif %}
+                    
+             </p>
+            <p>Comment : {{visit.comment}}</p>
+            
+        </li>
+        
+        {% endfor %}  
+    </ul>
+</div>
     
-    {% endfor %}  
-</ul>
-
 {% endblock content %}
