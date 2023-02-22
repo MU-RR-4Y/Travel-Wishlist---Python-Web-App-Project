@@ -21,6 +21,7 @@ body{
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: inherit;
+   
 } 
 
 footer{
@@ -120,7 +121,8 @@ nav a {
     grid-template-rows: auto 1fr auto;
     max-height: fit-content;
     margin :0;
-    padding: 0;     
+    padding: 0;
+    overflow: auto;   
 }
 
 .grid-span-2{
@@ -158,9 +160,25 @@ nav a {
   .card{
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     background-color: #FEE81E;
+    opacity: 0.9;
     padding: 1rem 2rem;
     margin: 1rem;
     
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    
+}
+
+.card2{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    font-weight: bolder;
+    background-color: #FFB340;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    width: 60%;
+    color: white;
     display : flex;
     justify-content: center;
     text-align: center;

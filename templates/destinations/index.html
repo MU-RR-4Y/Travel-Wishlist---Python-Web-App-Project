@@ -1,32 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="grid">
+<div class="grid container grid-span-3">
     
     
-    <ul >
+    <div class ='grid container grid-span-3'>
         {% for destination in destinations %}
         
         <div class =card>
-            <li class = list-style-none>
+          
                 <p >Name : <a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
                 <p>Country : <a href="/countries/show/{{destination.country.id}}">{{destination.country.name}}</a></p>
                 <p>Information : {{destination.information}}</p>
                 <form class='remove-form'action="/destination/{{destination.id}}/delete" method="post">
                     <button class='remove-button' type="submit"> Remove &#x1F5D1;</button>
                 </form>
-                
-            </li>
+           
+            
         </div>
         
         {% endfor %}
-        <div >
-            <form class='form'action="">
+    </div>
+
+        <div class='card2 grid-span-3'>
+            
 
                 <p>Most Visited Destination : {{visited_destination}}  &#128681</p>
                 <p>Most Wishlisted Destination : {{wishlist_destination}}</p>
             <a href="/destinations/new" class="add-destination-link">Add a Destination</a>
-        </form>
+       
         </div>
         
         
