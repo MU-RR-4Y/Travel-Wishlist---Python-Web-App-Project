@@ -91,7 +91,7 @@ visit_4 = Visit(user_4,destination_4,'09/02/2023',3,'The magic kingdom was great
 visit_5 = Visit(user_2,destination_6,'09/02/2023',3,'The magic kingdom was great')
 visit_6 = Visit(user_4,destination_3,'03/02/2023',3,'We had some French bread')
 visit_7 = Visit(user_1,destination_3,'10/02/2023',3,'Went to Versailles')
-visit_8 = Visit(user_5,destination_3,'01/02/2023',3,'Saw a PSG game')
+visit_8 = Visit(user_5,destination_1,'01/02/2023',3,'the saw the colosseum')
 
 visit_repo.save(visit_1)
 visit_repo.save(visit_2)

@@ -54,10 +54,28 @@ def most_travelled_user():
     visits = visit_repo.select_all()
     user_list = []
     for item in visits:
-        user_name =item.user.name
+        user_name = item.user.name
         user_list.append(user_name)
     user = wishlist_repo.most_common(user_list)
     return user
 
+def leader(list):  #tested on tests/leaderboard.py
+    leaderboard=[]
+    for name in list:
+        if leaderboard.count(name)==0:
+            leaderboard.append(name)
+        else:
+            pass
+    return leaderboard
 
-        
+
+
+def travel_leaderboard():
+    visits = visit_repo.select_all()
+    user_list = []
+    for item in visits:
+        user_name = item.user.name
+        user_list.append(user_name)
+    leaderboard = wishlist_repo.leaderboard(user_list)
+    final_leaderboard = leader(leaderboard)
+    return final_leaderboard

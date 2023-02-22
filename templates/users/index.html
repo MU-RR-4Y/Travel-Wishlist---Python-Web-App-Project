@@ -18,8 +18,16 @@
             {% endfor %}  
         
         </div> 
-        <div class="attention-card">
-            Travel Leader : {{user_visits}}
+        <div class="attention-card2">
+            <h2>Traveller Leaderboard</h2>
+            {% for user in user_visits %}
+            <ul>
+                <li>
+                    {{user}}
+                </li>
+            </ul>
+            {% endfor %}
+          
 
 
         </div>

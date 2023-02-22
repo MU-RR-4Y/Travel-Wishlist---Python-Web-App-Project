@@ -13,8 +13,7 @@ users_blueprint = Blueprint('users', __name__)
 @users_blueprint.route('/users')
 def users():
     users = user_repo.select_all()
-    user_visits = visit_repo.most_travelled_user()
-
+    user_visits = visit_repo.travel_leaderboard()
     return render_template('users/index.html', users = users, user_visits =user_visits)
 
 # NEW ('/new') GET

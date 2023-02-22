@@ -28,13 +28,9 @@ def select_all():
 
 
 def most_common(list):
-    most_common_item = None
-    counter = 0
-    for item in list:
-        if list.count(item)>counter:
-            counter= list.count(item)
-        most_common_item = item
+    most_common_item = max(list,key=list.count)
     return most_common_item
+    
 
 def most_wishlisted_destintion():
     wishlists = wishlist_repo.select_all()
@@ -45,15 +41,10 @@ def most_wishlisted_destintion():
     destination = wishlist_repo.most_common(destination_list)
     return destination
 
+def leaderboard(list):
+    leaders = sorted(list, key = list.count, reverse = True)
+    return leaders
     
-def most_common(list):
-    most_common_item = None
-    counter = 0
-    for item in list:
-        if list.count(item)>counter:
-            counter= list.count(item)
-        most_common_item = item
-    return most_common_item
 
 
     
