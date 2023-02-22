@@ -4,6 +4,8 @@ from models.country import Country
 import repositories.destination_respository as destination_repo
 import repositories.user_repository as user_repo
 import repositories.country_repository as country_repo
+import repositories.wishlist_repo as wishlist_repo
+import repositories.visit_repository as visit_repo
 
 
 def save(visit):
@@ -39,4 +41,12 @@ def select_all():
 #     return visit
 
 
+def most_most_visited_destination():
+    visits = visit_repo.select_all()
+    destination_list = []
+    for item in visits:
+        destination_name =item.destination.name
+        destination_list.append(destination_name)
+    destination = wishlist_repo.most_common(destination_list)
+    return destination
 

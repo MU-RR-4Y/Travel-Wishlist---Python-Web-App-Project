@@ -3,8 +3,8 @@
 {% block content %}
 <div>
     
-    <a href="/visits/new">Add a visit</a>
-    <ul>
+    
+    <ul class="grid">
         
         
         {% for visit in visits %}
@@ -32,7 +32,12 @@
             
         </li>
         
-        {% endfor %}  
+        {% endfor %} 
+        <div class="form">
+            <form action="">
+            <a href="/visits/new">Add a visit</a>
+        </form>
+        </div> 
     </ul>
 </div>
     

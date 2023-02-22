@@ -6,7 +6,6 @@ body{
 }
 
 
-
 .box{
     display : flex;
     flex-direction: column;
@@ -34,6 +33,7 @@ footer{
 }
 
 main {
+    min-width: 0;
     width: inherit;
     height: inherit;
     background-image: url(IMG_552_1647867573.jpeg);
@@ -68,27 +68,10 @@ nav a {
     transition: 0.5s; 
 }
 
-.card{
-    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
-    background-color: #FEE81E;
-    padding: 1rem 2rem;
-    margin: 1rem;
-    display : flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-}
-
-/* .destination-form{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-} */
-
-
 
 .grid{
     display: grid;
+    
     
 }
 
@@ -96,13 +79,9 @@ nav a {
     list-style: none;
 }
 
-/* .add-destination-link {
-border: dotted;
-border-radius: 0.5rem;
-margin: 2rem;
-}  */
 
 ul {
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows:  auto 1fr auto ;
@@ -121,6 +100,23 @@ ul {
     margin: auto;
     border-radius: 0.25rem;
 
+}
+
+
+
+
+ /* CARDS */
+
+ .card{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    background-color: #FEE81E;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    
 }
 
 .users-form{
@@ -149,10 +145,26 @@ ul {
     background-color: beige;
     padding: 1rem 2rem;
     margin: 1rem;
-
+    min-width: 0;
     width: 30%;
     display : flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
 }
+
+/* FORMS */
+
+.form{
+    
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    background-color: #FFB340;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+}
+

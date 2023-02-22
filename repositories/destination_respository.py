@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.destination import Destination
 import repositories.country_repository as country_repo
+import repositories.wishlist_repo as wishlist_repo
 
 def save(destination):
     sql = '''INSERT INTO destinations (name, country_id, information)

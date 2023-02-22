@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div >
 
-<h2>{{selected_country.name}}</h2>
-
-<p>Climate : {{selected_country.climate}}</p>
-<p>Currency : {{selected_country.currency}}</p>
+  <h1>{{selected_country.name}}</h1>
+  <div class="card">
+    <p>Climate : {{selected_country.climate}}</p>
+    <p>Currency : {{selected_country.currency}}</p>
+  </div>
+  
+  {% for destination in destinations %}
+  <ul>
+    <div class="card">
+      <li class="list-style-none">
+        <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
         
-                {% for destination in destinations %}
-                <ul>
-                    <li>
-                      <p><a href="/destinations/show/{{destination.id}}">{{destination.name}}</a></p>
-                      
-                    </li>          
-                </ul>
-                {% endfor %}
-              <a href="/destinations/new/{{selected_country.id}}">Add a destination</a>
+      </li>          
+    </div>
+  </ul>
+  {% endfor %}
+  <div>
+    <form class='form'action="">
 
-              <a href="/countries/{{selected_country.id}}/edit">Edit Country</a>
+      <a href="/destinations/new/{{selected_country.id}}">Add a destination</a>
+      
+      <a href="/countries/{{selected_country.id}}/edit">Edit Country</a>
+    </form>
+  </div>
+</div>
     
 {% endblock content %}

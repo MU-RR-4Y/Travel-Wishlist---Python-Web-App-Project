@@ -7,14 +7,14 @@
         <ul>
             {% for user in users %}
             <li class=" card">
-                <p>Name: <a href="/users/{{user.id}}">{{user.name}}</a></p>
+                <h2><a href="/users/{{user.id}}">{{user.name}}</a></h2>
                 
                 
                 
             </li>
             
             {% endfor %}  
-            <form class = 'users-form' action="/users/create" method="post">
+            <form class = 'form' action="/users/create" method="post">
                 <label for="name"></label>
                 <input type="text" id="name" name="name" required>
                 

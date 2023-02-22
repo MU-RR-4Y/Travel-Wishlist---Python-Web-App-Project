@@ -3,9 +3,7 @@
 {% block content %}
 <div class="grid">
     
-    <div class ='new-destination'>
-        <a href="/destinations/new" class="add-destination-link">Add a Destination</a>
-    </div>
+    
     <ul >
         {% for destination in destinations %}
         
@@ -22,11 +20,22 @@
         </div>
         
         {% endfor %}
-        
-        
+        <div >
+            <p></p>
+
+
+            <form class='form'action="">
+
+                <p>Most Visited Destination : {{visited_destination}}</p>
+                <p>Most Wishlisted Destination : {{wishlist_destination}}</p>
+            <a href="/destinations/new" class="add-destination-link">Add a Destination</a>
+        </form>
+        </div>
         
         
     </ul>
+    
+    
 
 </div>
 {% endblock content %}

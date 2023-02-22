@@ -1,31 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<a href="/countries/new">Add a new Country</a>
-
-<form action="/countries/create" method="post">
-    <label for="name"></label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="climate">Climate</label>
-    <input type="text" id="climate" name="climate" required>
-    
-    <label for="currency">Currency</label>
-    <input type="text" id="currency" name="currency" required>
-
-    <button type="submit">Add Country</button>
-
-</form>
+<h1>Countries</h1>
 
 <ul>
 {% for country in countries %}
     <li class="card">
-        <p>Country: <a href="/countries/show/{{country.id}}">{{country.name}}</a></p>
+        <h2><a href="/countries/show/{{country.id}}">{{country.name}}</a></h2>
         
          
     </li>
 {% endfor %}
+<form class = 'form' action="/countries/create" method="post">
+    <h2>Add a new Country</h2>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="climate">Climate</label>
+    <input type="text" id="climate" name="climate" required><br>
+    
+    <label for="currency">Currency</label>
+    <input type="text" id="currency" name="currency" required><br>
+
+    <button type="submit">Add Country</button>
+
+</form>
 </ul>
     
 {% endblock content %}

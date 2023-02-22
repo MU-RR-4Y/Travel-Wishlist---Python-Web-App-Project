@@ -7,6 +7,7 @@ import repositories.country_repository as country_repo
 import repositories.destination_respository as destination_repo
 import repositories.user_repository as user_repo
 import repositories.wishlist_repo as wishlist_repo
+import repositories.visit_repository as visit_repo
 
 destinations_blueprint = Blueprint('destinations', __name__)
 
@@ -15,8 +16,10 @@ destinations_blueprint = Blueprint('destinations', __name__)
 def destinations():
     destinations = destination_repo.select_all()
     countries = country_repo.select_all() 
+    wishlist_destination =wishlist_repo.most_wishlisted_destintion()
+    visited_destination = visit_repo.most_most_visited_destination()
 
-    return render_template('/destinations/index.html', destinations = destinations, countries = countries )
+    return render_template('/destinations/index.html', destinations = destinations, countries = countries, wishlist_destination = wishlist_destination, visited_destination = visited_destination)
 
 # NEW ('/new') GET
 # request form to add destination from destination page - new.html
