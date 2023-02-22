@@ -46,6 +46,14 @@ def most_wishlisted_destintion():
     return destination
 
     
+def most_common(list):
+    most_common_item = None
+    counter = 0
+    for item in list:
+        if list.count(item)>counter:
+            counter= list.count(item)
+        most_common_item = item
+    return most_common_item
 
 
     

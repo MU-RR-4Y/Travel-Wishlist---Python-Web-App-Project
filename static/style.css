@@ -1,7 +1,6 @@
 body{
     margin: 0;
     height: 100vh;
-    /* background-color: red; */
     font-family: fantasy;
 }
 
@@ -15,14 +14,14 @@ body{
     height : 100%;
 }
 
-header {
+ header {
     display: flex;
     flex-direction: row-reverse;
     background-color: #FEE81E;
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: inherit;
-}
+} 
 
 footer{
     display: flex;
@@ -33,13 +32,22 @@ footer{
 }
 
 main {
-    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: inherit;
-    height: inherit;
+    height: 100vh;
     background-image: url(IMG_552_1647867573.jpeg);
     background-repeat: no-repeat;
     background-size:cover ;
     
+}
+
+.main-index{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -58,10 +66,11 @@ nav ul {
     border-radius: 2.5rem;
     }
 
-nav ul li {
+.list-style-none{
     list-style: none;
-   
 }
+
+
 nav a {
     color: #ffffff;
     text-decoration: none;
@@ -69,10 +78,33 @@ nav a {
 }
 
 
+.welcome-card{
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    background-color: #FFB340;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    display : flex;
+    width:40%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+/*
+
 .grid{
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: scroll;  
+    max-height: fit-content; 
+    margin :0;
+    padding: 0;  
     
     
+}
+
+.list{
+    overflow: hidden
 }
 
 .list-style-none{
@@ -80,14 +112,6 @@ nav a {
 }
 
 
-ul {
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:  auto 1fr auto ;
-    margin :0;
-    padding: 0;
-}
 
 .new-destination{
     padding :1rem;
@@ -102,12 +126,12 @@ ul {
 
 }
 
-
+ */
 
 
  /* CARDS */
 
- .card{
+ /* .card{
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     background-color: #FEE81E;
     padding: 1rem 2rem;
@@ -150,12 +174,12 @@ ul {
     display : flex;
     justify-content: center;
     text-align: center;
-    flex-direction: column;
-}
+    flex-direction: column; */
+} */
 
 /* FORMS */
 
-.form{
+/* .form{
     
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     background-color: #FFB340;
@@ -166,5 +190,5 @@ ul {
     text-align: center;
     flex-direction: column;
 
-}
+} */
 

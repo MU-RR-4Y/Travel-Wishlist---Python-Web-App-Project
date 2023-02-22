@@ -6,13 +6,16 @@ import repositories.country_repository as country_repo
 import repositories.destination_respository as destination_repo
 import repositories.visit_repository as visit_repo
 
+
 users_blueprint = Blueprint('users', __name__)
 
 # INDEX ('/') GET
 @users_blueprint.route('/users')
 def users():
     users = user_repo.select_all()
-    return render_template('users/index.html', users = users)
+    user_visits = visit_repo.most_travelled_user()
+
+    return render_template('users/index.html', users = users, user_visits =user_visits)
 
 # NEW ('/new') GET
 

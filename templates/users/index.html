@@ -14,6 +14,11 @@
             </li>
             
             {% endfor %}  
+            <div class=" form">
+                Travel Leader : {{user_visits}}
+
+
+            </div>
             <form class = 'form' action="/users/create" method="post">
                 <label for="name"></label>
                 <input type="text" id="name" name="name" required>

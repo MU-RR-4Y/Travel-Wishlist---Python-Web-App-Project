@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
+<div class="grid" >
     
     
-    <ul class="grid">
+    <ul class = 'list'  >
         
-        
+      
         {% for visit in visits %}
         <li class = 'card' >
             <p>Visited by : {{visit.user.name}} </p>
@@ -37,7 +37,8 @@
             <form action="">
             <a href="/visits/new">Add a visit</a>
         </form>
-        </div> 
+        </div>
+      
     </ul>
 </div>
     

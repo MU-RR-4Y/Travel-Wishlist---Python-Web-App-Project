@@ -50,3 +50,14 @@ def most_most_visited_destination():
     destination = wishlist_repo.most_common(destination_list)
     return destination
 
+def most_travelled_user():
+    visits = visit_repo.select_all()
+    user_list = []
+    for item in visits:
+        user_name =item.user.name
+        user_list.append(user_name)
+    user = wishlist_repo.most_common(user_list)
+    return user
+
+
+        
