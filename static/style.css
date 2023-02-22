@@ -31,15 +31,23 @@ footer{
     width: inherit;
 }
 
+ul{
+    padding: 0;
+    
+}
+
 main {
     display: flex;
     align-items: center;
     justify-content: center;
     width: inherit;
+   
+
     height: 100vh;
     background-image: url(IMG_552_1647867573.jpeg);
     background-repeat: no-repeat;
     background-size:cover ;
+    
     
 }
 
@@ -48,6 +56,7 @@ main {
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 
@@ -84,32 +93,47 @@ nav a {
     padding: 1rem 2rem;
     margin: 1rem;
     display : flex;
-    width:40%;
+    width:60%;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
 }
-/*
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+}
 
 .grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    overflow: scroll;  
-    max-height: fit-content; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    max-height: fit-content;
     margin :0;
-    padding: 0;  
-    
-    
+    padding: 0;     
 }
 
-.list{
-    overflow: hidden
+.grid-span-2{
+    grid-column: span 2;  
 }
+.grid-span-3{
+    grid-column: span 3;  
+}
+.grid-span-4{
+    grid-column: span 4;  
+}
+/*
 
-.list-style-none{
-    list-style: none;
-}
 
 
 
@@ -131,11 +155,12 @@ nav a {
 
  /* CARDS */
 
- /* .card{
+  .card{
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     background-color: #FEE81E;
     padding: 1rem 2rem;
     margin: 1rem;
+    width: 20%;
     display : flex;
     justify-content: center;
     text-align: center;
@@ -179,7 +204,7 @@ nav a {
 
 /* FORMS */
 
-/* .form{
+.form{
     
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
     background-color: #FFB340;
@@ -190,5 +215,5 @@ nav a {
     text-align: center;
     flex-direction: column;
 
-} */
+} 
 

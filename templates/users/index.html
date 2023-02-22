@@ -1,33 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
+    <div class="grid container grid-span-3" >
 
              
-        <ul>
+        <div class ='grid container grid-span-3'>
+
+            
             {% for user in users %}
-            <li class=" card">
+            <div class="card" >
                 <h2><a href="/users/{{user.id}}">{{user.name}}</a></h2>
-                
-                
-                
-            </li>
+            </div>
             
             {% endfor %}  
-            <div class=" form">
-                Travel Leader : {{user_visits}}
+        
+        </div> 
+        <div class=" form">
+            Travel Leader : {{user_visits}}
 
 
-            </div>
-            <form class = 'form' action="/users/create" method="post">
-                <label for="name"></label>
-                <input type="text" id="name" name="name" required>
-                
-                <button type="submit">Add User</button>
-                
-            </form>      
-        </ul>
-
+        </div>
+        <form class = 'form grid-span-2' action="/users/create" method="post">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" required>
+            
+            <button type="submit">Add User</button>
+            
+        </form>      
       
     </div>
 {% endblock content %}
