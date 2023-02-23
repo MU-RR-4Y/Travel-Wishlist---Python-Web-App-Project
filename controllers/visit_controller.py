@@ -18,11 +18,6 @@ def visit():
 
 
 
-# @visits_blueprint.route('/visits/<index>')
-# def show_visit(index):
-#     visit = visit_repo.select(int(index))
-#     return render_template('/visits/show.html', visit =visit)
-
 
 # NEW ('/new') GET
 @visits_blueprint.route('/visits/new')

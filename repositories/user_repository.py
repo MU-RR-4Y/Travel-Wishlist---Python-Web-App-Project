@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 from models.user import User
-from models.country import Country
 from models.destination import Destination
 import repositories.country_repository as country_repo
 

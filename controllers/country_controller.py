@@ -70,12 +70,4 @@ def update_country(id):
     return redirect('/countries')
 
 
-
-
-
-    country = Country
-
-
-
-
 # DELETE ('/id/delete') POST

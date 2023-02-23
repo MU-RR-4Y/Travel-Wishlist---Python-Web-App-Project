@@ -1,9 +1,7 @@
 from db.run_sql import run_sql
 from models.visit import Visit
-from models.country import Country
 import repositories.destination_respository as destination_repo
 import repositories.user_repository as user_repo
-import repositories.country_repository as country_repo
 import repositories.wishlist_repo as wishlist_repo
 import repositories.visit_repository as visit_repo
 
@@ -28,17 +26,6 @@ def select_all():
         visit = Visit(user, destination , result['date'], result['rating'], result['comment'], result['id'])
         visits.append(visit)
     return visits 
-
-# def select(id):
-#     visit = None
-#     sql = "SELECT * FROM visits WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
-#     if result is not None:
-#         user = user_repo.select(int(result['user_id']))
-#         destination =destination_repo.select(int(result['destination_id']))
-#         visit = Visit(user, destination, result['date'], result['rating'], result['comment'], id )      
-#     return visit
 
 
 def most_most_visited_destination():

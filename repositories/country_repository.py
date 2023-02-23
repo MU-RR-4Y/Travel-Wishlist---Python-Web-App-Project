@@ -1,6 +1,6 @@
 from db.run_sql import run_sql
 from models.country import Country
-import repositories.country_repository as country_repo
+
 
 def save(country):
     sql = '''INSERT INTO countries (name, climate, currency)
